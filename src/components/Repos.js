@@ -25,53 +25,43 @@ const Repos = () => {
       return b.value - a.value;
     })
     .slice(0, 5);
-  console.log(languages);
+
   // most stars per language
   const mostStars = Object.values(languages)
     .sort((a, b) => {
       return b.stars - a.stars;
     })
-    .map((item)=> {
+    .map((item) => {
       return {
         ...item,
-        value:item.stars 
-      }
-    }).slice(0,5)
+        value: item.stars,
+      };
+    })
+    .slice(0, 5);
 
-// stars, forks
-let{stars,forks}= repos.reduce((total,item)=> {
-  const{stargazers_count,name,forks}=item
-  total.stars[stargazers_count]={
-    label: name,
-    value: stargazers_count
-  }
-  total.forks[forks] = {
-    label: name,
-    value: forks,
-  };
-  return total 
-}, {
-  stars:{},forks:{}
-})
-
-stars = Object.values(stars).slice(-5).reverse()
-forks = Object.values(forks).slice(-5).reverse();
-
-  const chartData = [
-    {
-      label: "HTML",
-      value: "360",
-    },
-
-    {
-      label: "CSS",
-      value: "140",
+  // stars, forks
+  let { stars, forks } = repos.reduce(
+    (total, item) => {
+      const { stargazers_count, name, forks } = item;
+      total.stars[stargazers_count] = {
+        label: name,
+        value: stargazers_count,
+      };
+      total.forks[forks] = {
+        label: name,
+        value: forks,
+      };
+      return total;
     },
     {
-      label: "Javascript",
-      value: "115",
-    },
-  ];
+      stars: {},
+      forks: {},
+    }
+  );
+
+  stars = Object.values(stars).slice(-5).reverse();
+  forks = Object.values(forks).slice(-5).reverse();
+
   return (
     <section className='section'>
       <Wrapper className='section-center'>
