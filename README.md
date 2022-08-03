@@ -1,9 +1,5 @@
-## Starter Project
-
-- css provided (global styles, styled components)
-- folders/files already setup
-- all imports included (warnings)
-- index.js for easier imports
+## Depoyed on Netlify
+[Search-github-users with react on netlify](https://react-search-github-users-hb.netlify.app/)
 
 ## Styled Components
 
@@ -47,7 +43,7 @@ version used - "react-router-dom": "^5.2.0",
 ## Gihthub API
 
 - [Root Endpoint](https://api.github.com)
-- [Get User](https://api.github.com/users/wesbos)
+- [Get User](https://api.github.com/users/john-smilga)
 - [Repos](https://api.github.com/users/john-smilga/repos?per_page=100)
 - [Followers](https://api.github.com/users/john-smilga/followers)
 - [Rate Limit](https://api.github.com/rate_limit)
